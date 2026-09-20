@@ -304,8 +304,19 @@ section{padding:clamp(56px,9vh,104px) 0;}
 .ctable thead th.mid{color:var(--cinnabar);}
 .ctable td.mid{color:var(--cinnabar);font-weight:500;}
 .ctable tr.sum td{border-bottom:none;font-weight:600;font-size:15px;background:var(--sand);}
+.ctable tr.group td{border-bottom:none;font-family:'DM Mono',monospace;font-size:12.5px;color:var(--muted);background:var(--sand);padding-top:0;}
+.ctable tr.group td:first-child{font-family:'Archivo',sans-serif;}
 .tscroll{overflow-x:auto;}
 .tscroll table{min-width:520px;}
+.datebar select{
+  font-family:'DM Mono',ui-monospace,monospace;font-size:15px;padding:10px 12px;
+  border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink);
+}
+.costnote{
+  margin-top:14px;font-size:13px;line-height:1.5;color:var(--ink-2);
+  background:var(--sand);padding:13px 15px;border-radius:2px;
+}
+.costnote b{color:var(--cinnabar);}
 
 /* ---------- footer ---------- */
 footer{background:#1F2422;color:#B7BEB8;padding:clamp(44px,7vh,72px) 0 34px;}
@@ -363,7 +374,7 @@ footer .end{margin-top:30px;padding-top:18px;border-top:1px solid #333B37;font-f
       <div><b>8</b><span>állomás</span></div>
       <div><b>3</b><span>tartomány</span></div>
       <div><b>~14 ó</b><span>vonaton</span></div>
-      <div><b>~995e</b><span>Ft / fő</span></div>
+      <div><b id="statCost">~995e</b><span>Ft / fő</span></div>
     </div>
   </div>
 </section>
@@ -424,22 +435,34 @@ footer .end{margin-top:30px;padding-top:18px;border-top:1px solid #333B37;font-f
     <div class="sechead">
       <span class="eyebrow">Költségek</span>
       <h2>Mennyibe fog kerülni</h2>
-      <p>Egy főre, közepes kategóriában. Árfolyam: 1 CNY ≈ 47 Ft, 1 EUR ≈ 363 Ft. A szállás nagyjából feleződik fejenként, ha ketten laktok egy szobában.</p>
+      <p>Árfolyam: 1 CNY ≈ 47 Ft, 1 EUR ≈ 363 Ft. A szállás kétágyas szobákkal számol — ez a legnagyobb tétel, ahol a közös utazás tényleg spórol.</p>
     </div>
+
+    <div class="datebar">
+      <div>
+        <label for="pax">Hányan megyünk?</label>
+        <select id="pax">
+          <option value="1">1 fő</option>
+          <option value="2">2 fő</option>
+          <option value="3">3 fő</option>
+          <option value="4" selected>4 fő</option>
+          <option value="5">5 fő</option>
+          <option value="6">6 fő</option>
+        </select>
+      </div>
+      <div class="out">
+        <b id="paxOut">—</b>
+        <span id="paxNote"></span>
+      </div>
+    </div>
+
     <div class="tscroll">
       <table class="ctable">
         <thead><tr><th>Mire megy el</th><th>Szűkös</th><th class="mid">Kényelmes</th><th>Bőkezű</th></tr></thead>
-        <tbody>
-          <tr><td>Repülőjegy (nyitott szárú)</td><td>180 000</td><td class="mid">245 000</td><td>310 000</td></tr>
-          <tr><td>Szállás — 13 éjszaka</td><td>230 000</td><td class="mid">360 000</td><td>590 000</td></tr>
-          <tr><td>Vonatok — 8 szakasz</td><td>53 000</td><td class="mid">68 000</td><td>90 000</td></tr>
-          <tr><td>Belépők, jegyek</td><td>85 000</td><td class="mid">92 000</td><td>130 000</td></tr>
-          <tr><td>Étkezés, helyi közlekedés</td><td>95 000</td><td class="mid">170 000</td><td>270 000</td></tr>
-          <tr><td>Biztosítás, eSIM, tartalék</td><td>40 000</td><td class="mid">60 000</td><td>90 000</td></tr>
-          <tr class="sum"><td>Összesen</td><td>≈ 683 000</td><td class="mid">≈ 995 000</td><td>≈ 1 480 000</td></tr>
-        </tbody>
+        <tbody id="costBody"></tbody>
       </table>
     </div>
+    <p class="costnote" id="costNote"></p>
   </div>
 </section>
 
@@ -477,7 +500,7 @@ footer .end{margin-top:30px;padding-top:18px;border-top:1px solid #333B37;font-f
       </div>
     </div>
     <div class="end">
-      <span>Készült az útitervhez · v1</span>
+      <span>Készült az útitervhez · v1.3</span>
       <span id="footDate">—</span>
     </div>
   </div>
@@ -778,8 +801,8 @@ const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 
 function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
 
-/* képek: előbb images/ mappából, ha ott nincs, a gyökérből */
-function imgPaths(file){return ['images/'+file, file];}
+/* képek: előbb a gyökérből, ha ott nincs, az images/ mappából */
+function imgPaths(file){return [file, 'images/'+file];}
 function setImg(el,file,fb){
   if(!file){if(fb)fb.style.display='flex';return;}
   const list=imgPaths(file);let k=0;
@@ -809,7 +832,7 @@ function setThumb(el,file){
 (function(){
   const el=document.getElementById('heroBg');
   const names=['hero.jpg','hero.jpeg','hero.png','hero.webp','03-Wulingyuan-tianzi.jpg'];
-  const list=[];names.forEach(n=>{list.push('images/'+n);list.push(n);});
+  const list=[];names.forEach(n=>{list.push(n);list.push('images/'+n);});
   let k=0;
   (function go(){
     if(k>=list.length)return;
@@ -954,6 +977,64 @@ function prog(){
   document.getElementById('progBar').style.width=(all.length?on/all.length*100:0)+'%';
 }
 
+/* ============ költségek ============ */
+/* share: false = fejenként ugyanannyi · 'room' = szobán oszlik · 'split' = részben oszlik */
+const COSTS=[
+ {t:'Repülőjegy (nyitott szárú)', v:[180000,245000,310000], share:false},
+ {t:'Szállás — 13 éjszaka',       v:[230000,360000,590000], share:'room'},
+ {t:'Vonatok — 8 szakasz',        v:[53000,68000,90000],    share:false},
+ {t:'Belépők, jegyek',            v:[85000,92000,130000],   share:false},
+ {t:'Étkezés, helyi közlekedés',  v:[95000,170000,270000],  share:'split'},
+ {t:'Biztosítás, eSIM, tartalék', v:[40000,60000,90000],    share:false}
+];
+const huf=n=>Math.round(n/1000)*1000;
+const fmtHuf=n=>huf(n).toLocaleString('hu-HU').replace(/\u00A0/g,' ');
+
+function perPerson(row,n){
+  return row.v.map(x=>{
+    if(row.share==='room'){
+      const rooms=Math.ceil(n/2);
+      const factor=n===1?1:1.1;      // kétágyas kicsit drágább, mint az egyágyas
+      return x*rooms*factor/n;
+    }
+    if(row.share==='split') return n>1 ? x*0.92 : x;  // közös taxi, megosztott fuvarok
+    return x;
+  });
+}
+
+function renderCosts(){
+  const n=+document.getElementById('pax').value;
+  const body=document.getElementById('costBody');
+  const tot=[0,0,0];
+  let html='';
+  COSTS.forEach(r=>{
+    const pp=perPerson(r,n);
+    pp.forEach((x,i)=>tot[i]+=x);
+    const tag=r.share==='room'?' <span style="color:var(--jade)">· szobán oszlik</span>'
+             :r.share==='split'?' <span style="color:var(--jade)">· részben oszlik</span>':'';
+    html+=`<tr><td>${r.t}${n>1?tag:''}</td><td>${fmtHuf(pp[0])}</td><td class="mid">${fmtHuf(pp[1])}</td><td>${fmtHuf(pp[2])}</td></tr>`;
+  });
+  html+=`<tr class="sum"><td>Fejenként</td><td>≈ ${fmtHuf(tot[0])}</td><td class="mid">≈ ${fmtHuf(tot[1])}</td><td>≈ ${fmtHuf(tot[2])}</td></tr>`;
+  if(n>1){
+    html+=`<tr class="group"><td>Mind a ${n} főre</td><td>≈ ${fmtHuf(tot[0]*n)}</td><td>≈ ${fmtHuf(tot[1]*n)}</td><td>≈ ${fmtHuf(tot[2]*n)}</td></tr>`;
+  }
+  body.innerHTML=html;
+
+  const rooms=Math.ceil(n/2);
+  document.getElementById('paxOut').textContent=`≈ ${fmtHuf(tot[1])} Ft / fő`;
+  document.getElementById('paxNote').textContent=n===1
+    ? 'Egyágyas szobákkal, kényelmes kategóriában'
+    : `${rooms} kétágyas szoba · kényelmes kategóriában · mind a ${n} főre ≈ ${fmtHuf(tot[1]*n)} Ft`;
+
+  const stat=document.getElementById('statCost');
+  if(stat)stat.textContent='~'+Math.round(huf(tot[1])/1000)+'e';
+
+  document.getElementById('costNote').innerHTML = n>1
+    ? `A repülő, a vonat és a belépők fejenként ugyanannyiak — ezeken a létszám nem segít. A szállás viszont igen, és a transzfereknél is számít: a <b>Shangrao–Wangxian fuvar</b> egyedül fájó, ${n} főre elosztva jelentéktelen. <b>Foglalásnál viszont ${rooms} szobát kell lefoglalni</b>, és a wangxiani sziklaszállásoknál ez a szűk keresztmetszet — ott nem biztos, hogy lesz ${rooms} szabad szoba ugyanarra az éjszakára.`
+    : 'Egy főre, egyágyas szobákkal. Ha valakivel megosztod a szobát, a szállás nagyjából feleződik.';
+}
+document.getElementById('pax').addEventListener('change',renderCosts);
+renderCosts();
 /* ============ dátumszámítás ============ */
 function recalc(){
   const inp=document.getElementById('dep');
