@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kína 2027 — nyugatról keletre</title>
+<meta name="description" content="14 nap Kínában: Csungking, Zhangjiajie, Furong, Wangxian-völgy, Hengdian, Sanghaj.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,700&display=swap&subset=latin,latin-ext" rel="stylesheet">
+<style>
+:root{
+  --paper:#FBF9F5;
+  --card:#FFFFFF;
+  --sand:#EFE9DD;
+  --line:#E2DCD0;
+  --ink:#1F2422;
+  --ink-2:#4B554F;
+  --muted:#7C867F;
+  --jade:#2F6B5B;
+  --jade-lt:#D9E6E0;
+  --cinnabar:#BF4A30;
+  --shadow:0 2px 4px rgba(31,36,34,.04), 0 12px 32px rgba(31,36,34,.07);
+  --radius:3px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;scroll-padding-top:74px;}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'Archivo',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px);}
+.narrow{max-width:760px;}
+
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:700;letter-spacing:-.02em;line-height:1.08;}
+.script{font-family:'Caveat',cursive;font-weight:700;color:var(--jade);letter-spacing:0;}
+.mono{font-family:'DM Mono',ui-monospace,monospace;}
+
+.eyebrow{
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--cinnabar);display:block;margin-bottom:12px;
+}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:60;
+  background:rgba(251,249,245,.93);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+  padding-top:env(safe-area-inset-top,0px);
+}
+.nav .inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px;}
+.brand{font-family:'Fraunces',serif;font-weight:700;font-size:17px;letter-spacing:-.02em;white-space:nowrap;}
+.brand i{font-family:'Caveat',cursive;font-style:normal;color:var(--jade);font-size:21px;margin-left:5px;}
+.nav ul{display:flex;gap:clamp(10px,2vw,26px);list-style:none;align-items:center;}
+.nav a{
+  font-size:12.5px;font-weight:500;text-decoration:none;color:var(--ink-2);
+  letter-spacing:.04em;white-space:nowrap;padding:4px 0;border-bottom:1.5px solid transparent;
+  transition:color .2s,border-color .2s;
+}
+.nav a:hover{color:var(--jade);border-color:var(--jade);}
+@media(max-width:820px){
+  .nav ul{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .nav ul::-webkit-scrollbar{display:none;}
+  .brand{display:none;}
+}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:clamp(430px,78vh,700px);
+  display:flex;align-items:flex-end;
+  background:linear-gradient(150deg,#22302B,#3A4F45 55%,#5B6B5C);
+  overflow:hidden;
+}
+.hero .bg{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+}
+.hero .veil{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(20,26,24,.88) 0%,rgba(20,26,24,.42) 45%,rgba(20,26,24,.22) 100%);
+}
+.hero .inner{position:relative;z-index:2;color:#F4F1EA;padding:0 0 clamp(40px,7vh,72px);width:100%;}
+.hero .script{color:#9CCBB8;font-size:clamp(26px,4vw,40px);display:block;margin-bottom:-6px;}
+.hero h1{font-size:clamp(40px,7.4vw,86px);line-height:.95;}
+.hero p{margin-top:18px;max-width:46ch;color:#D6D9D1;font-size:clamp(15px,1.6vw,18px);}
+.heroMeta{
+  display:flex;gap:clamp(18px,4vw,44px);flex-wrap:wrap;margin-top:30px;
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9AA49C;
+}
+.heroMeta b{display:block;color:#F4F1EA;font-size:19px;font-weight:500;letter-spacing:.02em;margin-top:4px;font-family:'Fraunces',serif;}
+
+/* ---------- sections ---------- */
+section{padding:clamp(56px,9vh,104px) 0;}
+.sechead{margin-bottom:clamp(30px,5vh,52px);max-width:640px;}
+.sechead h2{font-size:clamp(30px,4.6vw,48px);}
+.sechead p{margin-top:14px;color:var(--ink-2);}
+.tint{background:var(--sand);}
+
+/* ---------- route strip ---------- */
+.routebox{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,3vw,32px);box-shadow:var(--shadow);overflow-x:auto;}
+.routebox svg{min-width:700px;width:100%;height:auto;}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:26px;border-radius:var(--radius);overflow:hidden;}
+.stats div{background:var(--card);padding:22px 20px;}
+.stats b{display:block;font-family:'Fraunces',serif;font-size:clamp(26px,3.4vw,38px);font-weight:700;line-height:1;letter-spacing:-.02em;}
+.stats span{display:block;margin-top:7px;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);}
+
+/* ---------- destination cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(266px,1fr));gap:clamp(18px,2.6vw,32px);}
+.dcard{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;text-align:left;display:flex;flex-direction:column;
+  transition:transform .28s cubic-bezier(.2,.7,.3,1),box-shadow .28s;
+}
+.dcard:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.dcard .shot{position:relative;aspect-ratio:4/3;background:var(--jade-lt);overflow:hidden;}
+.dcard .shot .ph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .6s;}
+.dcard:hover .shot .ph{transform:scale(1.05);}
+.dcard .shot .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(155deg,#E6EEE9,#D3E0D9);}
+.dcard .shot .fallback svg{width:46%;height:auto;}
+.gs{fill:none;stroke:#2F6B5B;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.75;}
+.gf{fill:#C3D6CD;stroke:none;}
+.gsoft{fill:none;stroke:#8FAEA1;stroke-width:1.5;stroke-linecap:round;}
+.dcard .num{
+  position:absolute;top:12px;left:12px;z-index:2;
+  background:rgba(251,249,245,.94);color:var(--ink);
+  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.12em;
+  padding:5px 9px;border-radius:2px;
+}
+.dcard .body{padding:20px;flex:1;display:flex;flex-direction:column;}
+.dcard h3{font-size:23px;}
+.dcard .han{font-family:'Fraunces',serif;font-weight:300;font-size:13px;color:var(--muted);margin-top:3px;display:block;}
+.dcard .lede{margin-top:11px;font-size:13.5px;line-height:1.5;color:var(--ink-2);}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:15px;}
+.tag{
+  font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--jade-lt);color:var(--jade);padding:4px 8px;border-radius:2px;
+}
+.tag.red{background:#F6E0DA;color:var(--cinnabar);}
+.more{
+  margin-top:17px;padding-top:14px;border-top:1px solid var(--line);
+  font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--jade);display:flex;align-items:center;gap:7px;
+}
+.more svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;transition:transform .25s;}
+.dcard:hover .more svg{transform:translateX(4px);}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:100;display:none;}
+.modal.on{display:block;}
+.modal .veil2{position:absolute;inset:0;background:rgba(20,26,24,.6);backdrop-filter:blur(3px);}
+.modal .panel{
+  position:absolute;inset:auto 0 0 0;max-height:92vh;
+  background:var(--paper);border-radius:6px 6px 0 0;overflow-y:auto;
+  animation:rise .36s cubic-bezier(.2,.7,.3,1);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media(min-width:900px){
+  .modal .panel{inset:4vh auto 4vh 50%;transform:translateX(-50%);width:min(880px,92vw);border-radius:4px;max-height:92vh;}
+}
+@keyframes rise{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+@media(min-width:900px){@keyframes rise{from{transform:translateX(-50%) translateY(26px);opacity:0}to{transform:translateX(-50%) translateY(0);opacity:1}}}
+.modal .top{position:relative;aspect-ratio:21/9;background:var(--jade-lt);overflow:hidden;}
+.modal .top .ph{position:absolute;inset:0;background-size:cover;background-position:center;}
+.modal .top .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(155deg,#E6EEE9,#D3E0D9);}
+.modal .top .fallback svg{height:62%;width:auto;}
+.modal .close{
+  position:absolute;top:14px;right:14px;z-index:5;width:38px;height:38px;border-radius:50%;
+  background:rgba(251,249,245,.94);display:flex;align-items:center;justify-content:center;
+}
+.modal .close svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;}
+.modal .cont{padding:clamp(22px,4vw,40px);}
+.modal h3{font-size:clamp(28px,4.4vw,42px);}
+.modal .han{font-family:'Fraunces',serif;font-weight:300;color:var(--muted);font-size:16px;display:block;margin-top:5px;}
+.modal .lede{margin-top:16px;color:var(--ink-2);font-size:16.5px;}
+.mblock{margin-top:30px;}
+.mblock h4{
+  font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--cinnabar);font-weight:500;margin-bottom:13px;
+}
+.mblock ul{list-style:none;}
+.mblock li{position:relative;padding:0 0 13px 20px;font-size:14.5px;line-height:1.5;}
+.mblock li::before{content:'';position:absolute;left:0;top:8px;width:7px;height:7px;border:1.6px solid var(--jade);border-radius:50%;}
+.mblock li b{font-weight:600;}
+.mblock li span{display:block;color:var(--muted);font-size:13px;line-height:1.45;margin-top:2px;}
+
+/* látnivaló sorok képpel */
+.sights{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.sights li{display:flex;gap:14px;align-items:flex-start;padding:0;}
+.sights li::before{display:none;}
+.sights .thumb{
+  flex:none;width:128px;aspect-ratio:3/2;border-radius:2px;overflow:hidden;
+  background:var(--jade-lt);background-size:cover;background-position:center;
+  border:1px solid var(--line);
+}
+.sights .thumb.none{display:flex;align-items:center;justify-content:center;background:var(--sand);}
+.sights .thumb.none svg{width:46%;height:auto;opacity:.5;}
+.sights .txt{flex:1;min-width:0;}
+.sights .txt b{display:block;font-weight:600;font-size:15px;line-height:1.3;}
+.sights .txt span{display:block;color:var(--muted);font-size:13px;line-height:1.45;margin-top:3px;}
+@media(max-width:560px){
+  .sights .thumb{width:92px;}
+  .sights .txt b{font-size:14px;}
+}
+.fact{
+  margin-top:30px;background:var(--jade-lt);border-left:3px solid var(--jade);
+  padding:18px 20px;font-size:14.5px;line-height:1.55;color:#24493E;border-radius:0 2px 2px 0;
+}
+.fact b{display:block;font-family:'Caveat',cursive;font-size:21px;color:var(--jade);margin-bottom:2px;}
+
+/* ---------- date control ---------- */
+.datebar{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:clamp(18px,3vw,26px);box-shadow:var(--shadow);
+  display:flex;gap:22px;align-items:flex-end;flex-wrap:wrap;margin-bottom:34px;
+}
+.datebar label{display:block;font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+.datebar input[type=date]{
+  font-family:'DM Mono',monospace;font-size:15px;padding:10px 12px;
+  border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink);
+}
+.datebar .out{flex:1;min-width:210px;}
+.datebar .out b{font-family:'Fraunces',serif;font-size:21px;display:block;line-height:1.2;}
+.datebar .out span{font-size:13px;color:var(--muted);}
+.btn{
+  font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  padding:11px 16px;border:1px solid var(--jade);color:var(--jade);border-radius:2px;
+  transition:background .2s,color .2s;
+}
+.btn:hover{background:var(--jade);color:#fff;}
+
+/* ---------- day accordion ---------- */
+.day{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:10px;overflow:hidden;}
+.day summary{
+  list-style:none;cursor:pointer;padding:17px 20px;
+  display:flex;gap:16px;align-items:center;transition:background .2s;
+}
+.day summary::-webkit-details-marker{display:none;}
+.day summary:hover{background:var(--sand);}
+.day .dnum{
+  flex:none;width:44px;height:44px;border-radius:50%;background:var(--jade-lt);color:var(--jade);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-family:'DM Mono',monospace;font-size:14px;font-weight:500;line-height:1;
+}
+.day .dnum small{font-size:8px;letter-spacing:.1em;margin-top:2px;opacity:.75;}
+.day .dmeta{flex:1;min-width:0;}
+.day .dmeta b{font-family:'Fraunces',serif;font-size:17.5px;display:block;letter-spacing:-.01em;}
+.day .dmeta span{font-size:12.5px;color:var(--muted);}
+.day .ddate{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--ink-2);text-align:right;white-space:nowrap;}
+.day .ddate em{display:block;font-style:normal;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:2px;}
+.day .chev{flex:none;width:15px;height:15px;stroke:var(--muted);fill:none;stroke-width:2;transition:transform .25s;}
+.day[open] .chev{transform:rotate(90deg);}
+.day .plan{padding:4px 20px 20px;border-top:1px solid var(--line);}
+.row{display:flex;gap:14px;align-items:flex-start;padding:11px 0;border-bottom:1px dashed var(--line);}
+.row:last-child{border-bottom:none;}
+.row input.t{
+  flex:none;width:66px;font-family:'DM Mono',monospace;font-size:13px;text-align:center;
+  padding:6px 4px;border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink);
+}
+.row input.t:focus{outline:none;border-color:var(--jade);background:#fff;}
+.row input.t.set{color:var(--jade);font-weight:500;border-color:var(--jade-lt);}
+.row .what{flex:1;min-width:0;}
+.row .what b{font-weight:600;font-size:14.5px;}
+.row .what span{display:block;font-size:12.5px;color:var(--muted);line-height:1.45;margin-top:1px;}
+.kind{
+  flex:none;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 7px;border-radius:2px;background:var(--sand);color:var(--muted);margin-top:3px;
+}
+.kind.tr{background:#F6E0DA;color:var(--cinnabar);}
+.kind.hl{background:var(--jade-lt);color:var(--jade);}
+.note{margin-top:14px;font-size:13px;color:var(--ink-2);background:var(--sand);padding:12px 14px;border-radius:2px;line-height:1.5;}
+.note b{color:var(--cinnabar);}
+
+/* ---------- checklist ---------- */
+.phase{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;margin-bottom:14px;}
+.phase.hot{border-color:var(--cinnabar);}
+.phase .ph-h{display:flex;justify-content:space-between;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:15px;}
+.phase h3{font-size:20px;}
+.phase .due{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--cinnabar);letter-spacing:.06em;white-space:nowrap;}
+.phase .due em{font-style:normal;color:var(--muted);}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:9px 0;border-bottom:1px dashed var(--line);}
+.chk:last-child{border-bottom:none;}
+.chk input{flex:none;appearance:none;width:19px;height:19px;border:1.6px solid var(--muted);border-radius:2px;margin-top:2px;cursor:pointer;transition:all .18s;position:relative;background:var(--paper);}
+.chk input:checked{background:var(--jade);border-color:var(--jade);}
+.chk input:checked::after{content:'';position:absolute;left:5.5px;top:2px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(43deg);}
+.chk label{flex:1;cursor:pointer;font-size:14.5px;line-height:1.45;}
+.chk label span{display:block;font-size:12.5px;color:var(--muted);line-height:1.45;margin-top:2px;}
+.chk .cost{font-family:'DM Mono',monospace;font-size:11px;color:var(--jade);white-space:nowrap;margin-top:3px;}
+.chk.done label{opacity:.45;text-decoration:line-through;text-decoration-thickness:1px;}
+.chk.done label span,.chk.done .cost{text-decoration:none;}
+.prog{height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:26px;}
+.prog i{display:block;height:100%;width:0;background:var(--jade);transition:width .5s;}
+
+/* ---------- costs ---------- */
+.ctable{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+.ctable th,.ctable td{padding:13px 15px;text-align:right;font-family:'DM Mono',monospace;font-size:13.5px;border-bottom:1px solid var(--line);}
+.ctable th:first-child,.ctable td:first-child{text-align:left;font-family:'Archivo',sans-serif;font-size:14.5px;}
+.ctable thead th{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);background:var(--sand);}
+.ctable thead th.mid{color:var(--cinnabar);}
+.ctable td.mid{color:var(--cinnabar);font-weight:500;}
+.ctable tr.sum td{border-bottom:none;font-weight:600;font-size:15px;background:var(--sand);}
+.tscroll{overflow-x:auto;}
+.tscroll table{min-width:520px;}
+
+/* ---------- footer ---------- */
+footer{background:#1F2422;color:#B7BEB8;padding:clamp(44px,7vh,72px) 0 34px;}
+footer .script{color:#7FB3A0;font-size:30px;display:block;}
+footer h4{color:#F4F1EA;font-size:25px;margin-top:2px;}
+footer p{margin-top:14px;font-size:14px;max-width:52ch;}
+footer .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:30px;margin-top:38px;padding-top:28px;border-top:1px solid #333B37;}
+footer h5{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7FB3A0;font-weight:500;margin-bottom:9px;}
+footer li{list-style:none;font-size:13.5px;padding:3px 0;}
+footer .end{margin-top:30px;padding-top:18px;border-top:1px solid #333B37;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6E776F;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap inner">
+    <span class="brand">Kína 2027 <i>nyugatról keletre</i></span>
+    <ul>
+      <li><a href="#attekintes">Áttekintés</a></li>
+      <li><a href="#utiterv">Úticélok</a></li>
+      <li><a href="#naptar">Naptár</a></li>
+      <li><a href="#checklista">Teendők</a></li>
+      <li><a href="#koltsegek">Költségek</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="bg" id="heroBg"></div>
+  <div class="veil"></div>
+  <div class="wrap inner">
+    <span class="script">Tizennégy nap,</span>
+    <h1>Kína,<br>nyugatról keletre</h1>
+    <p>Csungkingtól Sanghajig egyetlen vasútvonalon. Nyolc állomás, három tartomány, és egy útvonal, ami soha nem fordul vissza.</p>
+    <div class="heroMeta">
+      <span>Indulás<b id="hDep">—</b></span>
+      <span>Hazaérkezés<b id="hRet">—</b></span>
+      <span>Hátralévő idő<b id="hCount">—</b></span>
+      <span>Vonaton<b>~14 óra</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ÁTTEKINTÉS ============ -->
+<section id="attekintes">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Az útvonal</span>
+      <h2>Egy vonal, nyolc megálló</h2>
+      <p>Az egész utazás egy nyugat–keleti egyenes. Balról jobbra olvasd — soha nem megyünk kétszer ugyanarra.</p>
+    </div>
+    <div class="routebox" id="routebox"></div>
+    <div class="stats">
+      <div><b>14</b><span>nap</span></div>
+      <div><b>8</b><span>állomás</span></div>
+      <div><b>3</b><span>tartomány</span></div>
+      <div><b>~14 ó</b><span>vonaton</span></div>
+      <div><b>~995e</b><span>Ft / fő</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ÚTICÉLOK ============ -->
+<section id="utiterv" class="tint">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Úticélok</span>
+      <h2>Hová megyünk, és <span class="script">mit nézzünk meg</span></h2>
+      <p>Kattints bármelyikre: látnivalók, gyakorlati tippek és egy-két érdekesség mindegyik helyszínhez.</p>
+    </div>
+    <div class="grid" id="cards"></div>
+  </div>
+</section>
+
+<!-- ============ NAPTÁR ============ -->
+<section id="naptar">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Naptár és túraterv</span>
+      <h2>Melyik nap <span class="script">mi történik</span></h2>
+      <p>Állítsd be az indulás dátumát, és minden dátum magától kiszámolódik — a napi program és a foglalási határidők is. Az időpontokat beírhatod, ahogy megvannak a menetrendek; a böngésző megjegyzi.</p>
+    </div>
+
+    <div class="datebar">
+      <div>
+        <label for="dep">Indulás Budapestről</label>
+        <input type="date" id="dep" value="2027-04-15">
+      </div>
+      <div class="out">
+        <b id="outRange">—</b>
+        <span id="outWarn"></span>
+      </div>
+      <button class="btn" id="share">Link másolása a dátummal</button>
+    </div>
+
+    <div id="days"></div>
+  </div>
+</section>
+
+<!-- ============ CHECKLISTA ============ -->
+<section id="checklista" class="tint">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Teendők</span>
+      <h2>Mit mikor kell lefoglalni</h2>
+      <p>A határidők az indulás dátumából számolódnak. A pipák ezen a gépen maradnak meg — az utastársak az állapotot nem látják, csak ha megosztod velük.</p>
+    </div>
+    <div class="prog"><i id="progBar"></i></div>
+    <div id="phases"></div>
+  </div>
+</section>
+
+<!-- ============ KÖLTSÉGEK ============ -->
+<section id="koltsegek">
+  <div class="wrap">
+    <div class="sechead">
+      <span class="eyebrow">Költségek</span>
+      <h2>Mennyibe fog kerülni</h2>
+      <p>Egy főre, közepes kategóriában. Árfolyam: 1 CNY ≈ 47 Ft, 1 EUR ≈ 363 Ft. A szállás nagyjából feleződik fejenként, ha ketten laktok egy szobában.</p>
+    </div>
+    <div class="tscroll">
+      <table class="ctable">
+        <thead><tr><th>Mire megy el</th><th>Szűkös</th><th class="mid">Kényelmes</th><th>Bőkezű</th></tr></thead>
+        <tbody>
+          <tr><td>Repülőjegy (nyitott szárú)</td><td>180 000</td><td class="mid">245 000</td><td>310 000</td></tr>
+          <tr><td>Szállás — 13 éjszaka</td><td>230 000</td><td class="mid">360 000</td><td>590 000</td></tr>
+          <tr><td>Vonatok — 8 szakasz</td><td>53 000</td><td class="mid">68 000</td><td>90 000</td></tr>
+          <tr><td>Belépők, jegyek</td><td>85 000</td><td class="mid">92 000</td><td>130 000</td></tr>
+          <tr><td>Étkezés, helyi közlekedés</td><td>95 000</td><td class="mid">170 000</td><td>270 000</td></tr>
+          <tr><td>Biztosítás, eSIM, tartalék</td><td>40 000</td><td class="mid">60 000</td><td>90 000</td></tr>
+          <tr class="sum"><td>Összesen</td><td>≈ 683 000</td><td class="mid">≈ 995 000</td><td>≈ 1 480 000</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="script">Aztán haza.</span>
+    <h4>Csungking → Sanghaj, 2027 tavaszán</h4>
+    <p>Nyolc állomás, egyetlen vonal kelet felé. A vonatjegyeket az indulás előtt 15 nappal lehet megvenni — és el is fogynak.</p>
+    <div class="fgrid">
+      <div>
+        <h5>Hol foglalunk</h5>
+        <ul>
+          <li>Vonat — Trip.com</li>
+          <li>Szállás — Trip.com, Booking</li>
+          <li>Repülő — légitársaság oldalán</li>
+          <li>Belépők — Trip.com, Klook</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Mielőtt indulunk</h5>
+        <ul>
+          <li>Alipay és WeChat Pay</li>
+          <li>Roaming eSIM</li>
+          <li>Offline térképek</li>
+          <li>Útlevél — a vonatjegy is az</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Amit kerülünk</h5>
+        <ul>
+          <li>Május 1–5. — kínai ünnep</li>
+          <li>Október 1–7. — Arany Hét</li>
+          <li>Szoros vonatátszállások</li>
+        </ul>
+      </div>
+    </div>
+    <div class="end">
+      <span>Készült az útitervhez · v1</span>
+      <span id="footDate">—</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="veil2" data-close></div>
+  <div class="panel">
+    <div class="top">
+      <div class="ph" id="mPh"></div>
+      <div class="fallback" id="mFb"></div>
+      <button class="close" data-close aria-label="Bezárás"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="cont" id="mCont"></div>
+  </div>
+</div>
+
+<script>
+/* ============ ikonok ============ */
+const G={
+chongqing:`<svg viewBox="0 0 110 160"><path class="gf" d="M14 150 L14 92 L28 84 L42 92 L42 150 Z"/><path class="gs" d="M2 152 h104"/><path class="gs" d="M14 152 V92 l14-9 14 9 v60"/><path class="gs" d="M50 152 V64 l12-8 12 8 v88"/><path class="gs" d="M82 152 V104 l10-7 10 7 v48"/><path class="gsoft" d="M20 106 h16 M20 120 h16 M56 82 h12 M56 98 h12 M56 114 h12 M88 118 h10"/><path class="gsoft" d="M0 44 L108 20"/><rect x="46" y="26" width="17" height="10" rx="2" class="gsoft"/></svg>`,
+wulong:`<svg viewBox="0 0 100 130"><path class="gs" d="M4 118 h88"/><path class="gs" d="M10 118 V40 q0-30 38-30 q38 0 38 30 v78"/><path class="gs" d="M28 118 V62 q0-16 20-16 q20 0 20 16 v56"/><path class="gsoft" d="M14 26 q10-8 22-6 M62 22 q12-2 20 6"/></svg>`,
+wulingyuan:`<svg viewBox="0 0 120 170"><path class="gf" d="M40 158 V60 q0-10 9-10 q9 0 9 10 v98 Z"/><path class="gs" d="M0 158 h116"/><path class="gs" d="M12 158 V86 q0-9 8-9 q8 0 8 9 v72"/><path class="gs" d="M40 158 V60 q0-10 9-10 q9 0 9 10 v98"/><path class="gs" d="M70 158 V44 q0-11 9-11 q9 0 9 11 v114"/><path class="gs" d="M98 158 V96 q0-8 7-8 q7 0 7 8 v62"/><path class="gsoft" d="M6 128 q26-12 52-4 q28 8 54-4"/></svg>`,
+tianmen:`<svg viewBox="0 0 118 156"><path class="gs" d="M2 146 h112"/><path class="gs" d="M6 146 L44 34 q12-30 24 0 L106 146"/><path class="gf" d="M44 118 q0-26 12-26 q12 0 12 26 z"/><path class="gs" d="M44 118 q0-26 12-26 q12 0 12 26"/><path class="gsoft" d="M32 146 L48 118 M80 146 L68 118"/><path class="gsoft" d="M14 96 q16 8 30 0 M70 74 q14 8 26 2"/></svg>`,
+furong:`<svg viewBox="0 0 116 160"><path class="gs" d="M4 62 h104"/><path class="gs" d="M22 62 V44 l14-13 14 13 v18"/><path class="gs" d="M58 62 V38 l16-14 16 14 v24"/><path class="gs" d="M14 40 h44 M52 30 h44"/><path class="gsoft" d="M28 62 v10 M42 62 v10 M66 62 v10 M82 62 v10"/><path class="gf" d="M30 74 h52 v56 h-52 z"/><path class="gs" d="M30 74 v58 M46 74 v58 M62 74 v58 M82 74 v58"/><path class="gs" d="M6 146 h104"/><path class="gsoft" d="M16 138 q14-8 28 0 q14 8 28 0 q14-8 28 0"/></svg>`,
+wangxian:`<svg viewBox="0 0 118 162"><path class="gs" d="M4 152 h108"/><path class="gs" d="M10 152 V30 q0-16 14-16"/><path class="gs" d="M104 152 V44 q0-18-16-18"/><path class="gf" d="M26 96 h28 v26 h-28 z"/><path class="gs" d="M22 96 h36 v26 h-36 z"/><path class="gs" d="M18 96 l22-14 22 14"/><path class="gs" d="M60 130 h32 v22 h-32 z"/><path class="gs" d="M56 130 l20-13 20 13"/><path class="gs" d="M30 62 h26 v20 h-26 z"/><path class="gs" d="M26 62 l17-12 17 12"/><circle cx="86" cy="60" r="7" class="gsoft"/></svg>`,
+hengdian:`<svg viewBox="0 0 118 152"><path class="gs" d="M2 142 h112"/><path class="gs" d="M4 56 q20-14 54-14 q34 0 54 14"/><path class="gs" d="M4 56 q-4-8 4-10 M114 56 q4-8-4-10"/><path class="gs" d="M16 56 v14 h84 V56"/><path class="gs" d="M20 84 q18-12 38-12 q20 0 38 12"/><path class="gs" d="M28 84 v58 h60 V84"/><path class="gf" d="M48 108 q10-14 20 0 v34 h-20 z"/><path class="gs" d="M48 142 v-34 q10-14 20 0 v34"/><path class="gsoft" d="M36 100 h6 M74 100 h6"/></svg>`,
+shanghai:`<svg viewBox="0 0 124 174"><path class="gs" d="M0 164 h120"/><path class="gs" d="M8 164 V116 h16 v48"/><path class="gf" d="M34 164 V52 q14 22 14 46 v66 z"/><path class="gs" d="M34 164 V52 q14 22 14 46 v66"/><path class="gs" d="M58 164 V72 l10-14 10 14 v92"/><path class="gs" d="M62 88 h16"/><path class="gs" d="M92 164 V34"/><circle cx="92" cy="60" r="12" class="gs"/><circle cx="92" cy="102" r="8" class="gs"/><path class="gs" d="M84 164 h16"/><path class="gsoft" d="M104 164 V128 h10 v36"/></svg>`};
+
+/* ============ helyszínek ============ */
+const STOPS=[
+{s:'chongqing',n:'Csungking',han:'重庆 · Chongqing',d:'1–3. nap',tags:['Nagyváros','Éjszaka','Hotpot'],
+ hero:'01-chongqing-hongyadong.webp',
+ lede:'A város, ami nem fér el a saját domborzatán. Toronyházak nőnek ki a hegyoldalból, a metró átmegy egy lakóházon.',
+ see:[['Hongyadong','A cölöpökre épült komplexum. Sötétedés után menj — nappal csak egy bevásárlóközpont.','01-chongqing-hongyadong.webp'],
+      ['Liziba állomás','A metró átmegy egy lakóház közepén. Alulról nézve a legjobb.','01-chongqing-liziba.webp'],
+      ['Jangce-drótkötélpálya','Háztetőmagasságban szeli át a folyót. Rövid, olcsó, megéri — és este a legszebb.','01-chongqing-yangce.jpg'],
+      ['Eling park és a Skywalk','A legjobb panoráma a félszigetre. A kanyargós sétány a szikla fölött lóg.','01-chongqing-eling.jpg'],
+      ['Ciqikou óváros','A történelmi ellensúly a rengeteg betonhoz.','01-chongqing-ciquikou.jpg'],
+      ['Esti folyami hajózás','Az egész város egyszerre kapcsol fel.','']],
+ tips:['Az első nap csak Hongyadong — a jetlag miatt ne tervezz többet.',
+       'A hotpot itt csípősebb, mint Chengduban. Kérj kettős fazekat (鸳鸯锅), ha bizonytalan vagy.',
+       'A Google Maps itt gyakorlatilag használhatatlan; a helyi navigációs appok sokkal jobbak.'],
+ fact:'Akkora a szintkülönbség, hogy egy épületnek több „földszintje" is lehet — és a GPS rendszeresen eltéveszti, melyik úton vagy, mert az egyik elmegy a másik fölött.'},
+
+{s:'wulong',n:'Wulong',han:'武隆 · karsztvidék',d:'3. nap · megálló',tags:['Karszt','Átszállás'],
+ hero:'02-wulong-tiankeng.jpg',
+ lede:'Pont az új vasútvonalon, félúton. Három hatalmas természetes kőhíd, alattuk egy Tang-kori postaállomás a víznyelő alján.',
+ see:[['Három Természetes Híd','A fő látványosság. Hatalmas mészkőívek, köztük lépcsőzetes ösvény.','02-wulong-bridges.jpg'],
+      ['Tiankeng-völgy','A víznyelő alján álló udvarház — valódi, rekonstruált postaállomás. Ezt látod a képen.','02-wulong-tiankeng.jpg'],
+      ['Furong-barlang','Csak ha előrébb vagy a tervnél: két órát elvisz.','']],
+ tips:['A csomagot hagyd a Wulong South állomás csomagmegőrzőjében.',
+       'Számolj kb. 3 órával a hidakra, plusz 30–40 perc oda-vissza busz.',
+       'Sok lépcső lefelé — kényelmes cipő kell.'],
+ fact:'A Transformers: A kihalás kora több jelenetét itt forgatták. A helyszín azóta is büszkén hirdeti.'},
+
+{s:'wulingyuan',n:'Wulingyuan',han:'武陵源 · Zhangjiajie',d:'3–5. nap',tags:['Nemzeti park','Két teljes nap','Avatar'],
+ hero:'03-Wulingyuan-yuanjiajie.jpg',
+ lede:'Több mint háromezer homokkő oszlop. Ez az a táj, ami az Avatar lebegő hegyeit ihlette — és sokkal nagyobb, mint amire számítasz.',
+ see:[['Yuanjiajie','A híres oszlopok. Elsőként, mielőtt megérkeznek a buszok.','03-Wulingyuan-yuanjiajie.jpg'],
+      ['Bailong lift','326 méteres üvegfelvonó a sziklafalon. A sor a valódi ár.','03-Wulingyuan-bailong.jpg'],
+      ['Tianzi-hegy','A legszélesebb panoráma a parkban. Reggel párásan a legszebb.','03-Wulingyuan-tianzi.jpg'],
+      ['Yangjiajie és Tianbo-palota','Csendesebb, vitathatóan szebb — a legtöbb csoport kihagyja.',''],
+      ['Aranyostor-patak','A völgy alja: az egyetlen szakasz, ahol felfelé nézel, nem lefelé.','03-Wulingyuan-goldenwhip.jpg']],
+ tips:['Wulingyuan városban szállj meg, ne Zhangjiajie városban — ez a park kapuja.',
+       'A jegy több napig érvényes, és a parkon belüli buszok benne vannak. Sokat fogod használni őket.',
+       'Reggel hétkor a kapunál. Kilencre már tömeg van.',
+       'Áprilisban reggel gyakran párás. Ha ködös, ne csüggedj: tíz-tizenegyre sokszor felszakad.'],
+ fact:'A „Déli Égi Oszlopot" 2010-ben hivatalosan átnevezték Avatar Hallelujah-hegynek, a film sikere után.'},
+
+{s:'tianmen',n:'Tianmen-hegy',han:'天门山 · Mennyek Kapuja',d:'5–7. nap',tags:['Kötélpálya','Üvegjárda','Időpontos'],
+ hero:'04-tianmen-mennyekkapuja.jpg',
+ lede:'Egy lyuk a hegyen keresztül, 1300 méteren. Odalent Zhangjiajie városa, és a világ egyik leghosszabb kabinos kötélpályája.',
+ see:[['A kötélpálya','7,5 km a városközponttól a csúcsig. Az egyik leghosszabb a világon.','04-Tianmen-Mountain-Cableway.jpg'],
+      ['Mennyek Kapuja és a 999 lépcső','A képen jól látszik, mi vár rád. Mozgólépcsővel is felmehetsz — lásd a tippeket.','04-tianmen-mennyekkapuja.jpg'],
+      ['Üvegjárdák','Sziklaperemre épített átlátszó ösvények. Cipővédő ¥5.','04-tianmen-glassway.jpg'],
+      ['99 kanyar út','A szerpentin felfelé, busszal. Érdemes az ablak mellé ülni.','04-tianmen-99bends.jpg']],
+ tips:['Nem kell lépcsőzni: ¥32-ért mozgólépcső megy a 999 lépcső mellett. Menj fel vele, és gyalog gyere le — a lefelé ingyenes, és a kilátás az átjárón keresztül sokkal jobb.',
+       'A hegy belsejében futó mozgólépcsők a csúcsra már benne vannak a jegyárban.',
+       'Nyitva 8:00–19:00, de belépni csak 16:00-ig lehet.',
+       'A jegy ¥288, időpontos — előre kell foglalni.'],
+ fact:'Télen a lépcsőt le szokták zárni, ha eljegesedik. Áprilisban ez már nem téma — ez is egy ok, amiért tavaszra tettük az utat.'},
+
+{s:'furong',n:'Furong Zhen',han:'芙蓉镇 · Hibiszkusz város',d:'7–8. nap',tags:['Óváros','Vízesés','Éjszakai fény'],
+ hero:'05-Furong.jpg',
+ lede:'Egy tujia város, ami a saját vízesésére épült. Kínában ez az egyetlen ősi város, ami közvetlenül egy zuhatagra települt — a 60 méteres vízesés a település közepén megy át.',
+ see:[['A vízesés','A város a tetejére épült. A víz függönye mögött ösvény vezet át.',''],
+      ['Tujia cölöpházak','Fagalériák egymásra rakva a sziklafalon, sok közülük eredeti.',''],
+      ['Wuyang folyó','A túlpartról látszik az egész város egy képben.',''],
+      ['Esti kivilágítás','Öt körül elmennek a napi látogatók, és felkapcsolják a fényeket.','05-Furong.jpg']],
+ tips:['Maradj éjszakára — ez az egész értelme. Aki napi kiránduláson jön, lemarad róla.',
+       'Áprilisban a tavaszi esők után a vízesés a legerősebb.',
+       'Zhangjiajie Westből 25 perc vonattal, saját állomása van.',
+       'Rengeteg a lépcső, egyenetlen és csúszós. Sok vendégházhoz több mint száz fokon kell lemenni — bőrönddel ez komoly gond, foglalás előtt kérdezz rá a szállásnál.'],
+ fact:'A város eredeti neve Wangcun volt. Egy 1986-os film után nevezték át — a film címe volt a Hibiszkusz város.'},
+
+{s:'wangxian',n:'Wangxian-völgy',han:'望仙谷 · Jiangxi',d:'8–9. nap',tags:['Sziklafalu','Éjszakai fény','Előre foglalni'],
+ hero:'06-wangxian.jpg',
+ lede:'Sziklafalra aggatott falu egy szurdokban, Shangrao mellett. Kínában az elmúlt években lett sztár, külföldiek alig járnak ide.',
+ see:[['A sziklafalu','Házak függőleges kőfalra rögzítve, egymás fölött több szinten.','06-wangxian.jpg'],
+      ['Vízesés-ösvények','A szurdokba vájt járdák kötik össze a szinteket.',''],
+      ['Esti kivilágítás','Este 11-ig nyitva. Ezért jövünk ide.',''],
+      ['Reggeli ködtenger','Ha szerencséd van az idővel, megéri a korai kelést.','']],
+ tips:['A völgyön belül aludj. A sziklaszállások jelentik az egész út legszűkebb keresztmetszetét — ezt foglald le először.',
+       'Shangrao állomástól kb. 1 óra: van transzferbusz, de a Didi rugalmasabb.',
+       'Sanghajból 2–3 óra vonattal — ezért van a végén, nem kitérőként.'],
+ fact:'Sanghajhoz képest közelebb van, mint gondolnád, mégis alig látni itt nyugati turistát. Készülj rá, hogy téged fognak fényképezni.'},
+
+{s:'hengdian',n:'Hengdian',han:'横店影视城 · Dongyang',d:'9–11. nap',tags:['Filmstúdió','C-drama','Hanfu'],
+ hero:'07-hengdian-hongkongstr.png',
+ lede:'A világ legnagyobb szabadtéri filmstúdiója. Nem múzeum: működő forgatási helyszín, ahol egész évben dolgoznak stábok.',
+ see:[['Tang–Song negyed','A Pursuit of Jade fő helyszíne. Ez a legzsúfoltabb — nyitáskor menj.',''],
+      ['Ming–Qing palota','1:1-es Tiltott Város. Itt forgott a Kunning-palota trónterme és a palotadrámák fele. 2–3 óra.','07-hengdian-castle.jpg'],
+      ['Guangzhou és Hongkong utca','A 20. század eleji díszletek. Sötétedés után a legjobb, és itt a legnagyobb az esély élő forgatásra.','07-hengdian-hongkongstr.png'],
+      ['Qin-palota','A monumentális díszlet, döngölt földfalakkal és kosztümös felvonulással. Ha kevés az idő, ez maradhat ki.',''],
+      ['Hanfu öltözés és fotózás','Mindenki ezt csinálja, és tényleg megéri. Fotóst előre foglalj.','07-hengdian-hanfu.jpeg'],
+      ['Qingming Shanghe Tu és Dream Valley','Song-kori utcák, illetve esti víz- és fényshow.','']],
+ tips:['Hengdian városában aludj, ne Yiwuban — a parkok szét vannak szórva, és az esték itt jók.',
+       'Vedd meg előre a kombinált jegyet: a 3 napos, 5 parkos jegy kb. ¥510. Külön-külön sokkal drágább.',
+       'A hanfu fotózást előre foglald — a jó fotósok betelnek.',
+       'Angol felirat szinte sehol. Legyen kéznél fordító, és mentsd le a jegyek QR-kódját.'],
+ fact:'A kínai kosztümös filmek és sorozatok nagyjából 70%-a itt készül. A Pursuit of Jade több mint 95%-ban itt forgott, és a májusi ünnep alatt közel nyolcvanezer látogató ment el a helyszíneire.'},
+
+{s:'shanghai',n:'Sanghaj',han:'上海 · és haza',d:'11–14. nap',tags:['Nagyváros','Múzeumok','Utolsó állomás'],
+ hero:'08-shanghai-thebund.jpg',
+ lede:'A modern Kína, három éjszakára, egy szállással. Szándékosan itt lassul le az út — ez a pihenő a kilencórás repülés előtt.',
+ see:[['A Bund és a pudongi látkép','A klasszikus sanghaji kép. Alkonyatkor a legjobb, utána át a nyilvános komppal — pár jüan, és ugyanaz a látvány, mint a turistahajóról.','08-shanghai-thebund.jpg'],
+      ['Yu-kert és az óváros','Korán, mielőtt megérkeznek a buszos csoportok.','08-shanghai-wukert.jpg'],
+      ['Francia negyed','Wukang és Anfu út, Fuxing park. Gyalog, terv nélkül a legjobb.','08-shanghai-francianegyed.jpg'],
+      ['Shanghai Tower','A csavart torony jobbra, mellette a Jin Mao és a World Financial Center. Naplementére foglalj online, és kihagyod a sort.','08-shanghai-tower.jpg'],
+      ['West Bund','Long Museum, Tank Shanghai, Power Station of Art — a kortárs réteg.',''],
+      ['Zhangyuan és TX Huaihai','Ahol a mai város tényleg zajlik.','']],
+ tips:['A Bund-oldalon vagy a Francia negyedben szállj meg — mindkettő gyalogolható.',
+       'Az utolsó nap programja a repülő indulásától függ. Ha korán megy, a 13. napot vedd az igazi utolsó napnak.',
+       'Ha maradt egy C-drama-vágy: a Chedun filmpark az 1930-as évek Sanghaját őrzi, kb. egy óra a központból.'],
+ fact:'A repülőtérre menő Maglev 431 km/h-val megy. Nem kell hozzá ok, hogy kipróbáld — de a 8 perces út a taxinál is gyorsabb.'}];
+
+/* ============ napok ============ */
+const DAYS=[
+{n:1,s:'chongqing',t:'Budapest → Csungking',sub:'Érkezés, semmi terv',items:[
+ ['','Indulás Budapestről','Air China, közvetlen, kb. 9 óra','tr'],
+ ['','Érkezés Csungkingba (CKG)','Időeltolódás +6 óra','tr'],
+ ['','Transzfer a szállásra','Metró vagy Didi a Jiefangbei környékére',''],
+ ['','Hongyadong sötétedés után','Ennyi elég az első napra','hl']],
+ note:'Jetlag-nap. Ne tervezz mást — a mászkálás holnap jön.'},
+
+{n:2,s:'chongqing',t:'Csungking',sub:'A függőleges város',items:[
+ ['','Liziba állomás','A metró a lakóházon keresztül',''],
+ ['','Ciqikou óváros','Reggeli tömeg előtt jobb',''],
+ ['','Jangce-drótkötélpálya','Rövid átkelés háztetőmagasságban',''],
+ ['','Eling park','Panoráma a félszigetre','hl'],
+ ['','Hotpot vacsora','Kettős fazék, ha bizonytalan vagy',''],
+ ['','Esti folyami hajózás','Opcionális, ha van erő','']],
+ note:''},
+
+{n:3,s:'wulong',t:'Csungking → Wulong → Zhangjiajie',sub:'Költözés, közbeiktatott karszttal',items:[
+ ['','Vonat: Chongqing East → Wulong South','kb. 1 ó 30','tr'],
+ ['','Csomag a csomagmegőrzőbe','Wulong South állomás',''],
+ ['','Három Természetes Híd','Busszal a bejárattól, kb. 3 óra','hl'],
+ ['','Vissza az állomásra','Hagyj rá ráhagyást',''],
+ ['','Vonat: Wulong South → Zhangjiajie West','kb. 2 ó 00','tr'],
+ ['','Transzfer Wulingyuanba','kb. 40 perc','']],
+ note:'Ha ez túl szorosnak tűnik, bontsd ketté: Wulong napi kirándulásként Csungkingból, és másnap tovább. Cserébe egy csungkingi este elmarad.'},
+
+{n:4,s:'wulingyuan',t:'Zhangjiajie Nemzeti Park — 1. nap',sub:'Az oszlopok',items:[
+ ['','Parkkapu, jegyváltás','Reggel 7 körül','hl'],
+ ['','Yuanjiajie','A híres oszlopok, a buszok előtt','hl'],
+ ['','Bailong lift','326 m üvegfelvonó',''],
+ ['','Tianzi-hegy','A legszélesebb panoráma',''],
+ ['','Vissza Wulingyuanba','']],
+ note:''},
+
+{n:5,s:'wulingyuan',t:'Park — 2. nap, majd átköltözés',sub:'A csendesebb oldal',items:[
+ ['','Yangjiajie és Tianbo-palota','Kevesebb ember, jobb kilátás','hl'],
+ ['','Aranyostor-patak','Völgytalpi séta, kb. 2 óra',''],
+ ['','Kijelentkezés, transzfer','Zhangjiajie városba, kb. 40 perc','tr']],
+ note:'Alternatíva: a nap egyik felét cseréld le az Üveghídra (Grand Canyon), ha az jobban vonz.'},
+
+{n:6,s:'tianmen',t:'Tianmen-hegy',sub:'Egész napos',items:[
+ ['','Kötélpálya a városközpontból','Időpontos jegy — előre foglalt','tr'],
+ ['','Üvegjárdák','Cipővédő ¥5',''],
+ ['','Mozgólépcső fel a Mennyek Kapujához','¥32','hl'],
+ ['','Gyalog le a 999 lépcsőn','Ingyenes, és jobb a kilátás','hl'],
+ ['','99 kanyar út busszal','']],
+ note:'Belépni csak 16:00-ig lehet, a park 19:00-ig tart nyitva. A kötélpálya sora a szűk keresztmetszet.'},
+
+{n:7,s:'furong',t:'Zhangjiajie → Furong Zhen',sub:'Rövid ugrás, hosszú este',items:[
+ ['','Vonat: Zhangjiajie West → Furong Zhen','kb. 25 perc','tr'],
+ ['','Bejelentkezés az óvárosban',''],
+ ['','A vízesés és az ösvény mögötte','','hl'],
+ ['','Átsétálni a túlpartra','A legjobb kilátás a városra',''],
+ ['','Esti kivilágítás','Öt után, amikor elmennek a napi látogatók','hl']],
+ note:''},
+
+{n:8,s:'wangxian',t:'Furong → Changsha → Shangrao → Wangxian',sub:'A törékeny nap',items:[
+ ['','Vonat: Furong Zhen → Changsha South','kb. 2 ó 30','tr'],
+ ['','Átszállás Changshában','Hagyj legalább 40 percet','tr'],
+ ['','Vonat: Changsha South → Shangrao','kb. 3 ó 00','tr'],
+ ['','Transzfer a völgybe','Busz vagy Didi, kb. 1 óra','tr'],
+ ['','Bejelentkezés a sziklaszálláson',''],
+ ['','Esti kivilágítás','23:00-ig nyitva','hl']],
+ note:'<b>Ez az egyetlen nap, ahol egy késés fáj.</b> Három szakasz, kb. 7 óra. Bő átszállási időkkel foglald, különben az esti kivilágítás megy el.'},
+
+{n:9,s:'hengdian',t:'Wangxian → Yiwu → Hengdian',sub:'Kelet felé, a filmvárosba',items:[
+ ['','Reggel a völgyben','Ködtenger, ha szerencsénk van','hl'],
+ ['','Transzfer Shangrao állomásra','kb. 1 óra','tr'],
+ ['','Vonat: Shangrao → Yiwu','kb. 1 ó 30','tr'],
+ ['','Kisvasút: Yiwu → Hengdian','Az állomás alatti szintről indul','tr'],
+ ['','Bejelentkezés Hengdianban',''],
+ ['','Guangzhou és Hongkong utca','Sötétedés után a legjobb','hl']],
+ note:''},
+
+{n:10,s:'hengdian',t:'Hengdian — egész nap',sub:'A c-drama nap',items:[
+ ['','Tang–Song negyed','Nyitáskor: ez a legzsúfoltabb','hl'],
+ ['','Hanfu öltözés és fotózás','Előre foglalt fotós','hl'],
+ ['','Ming–Qing palota','A Tiltott Város mása, 2–3 óra','hl'],
+ ['','Qingming Shanghe Tu','Song-kori utcák',''],
+ ['','Qin-palota','Ha marad idő',''],
+ ['','Dream Valley esti show','']],
+ note:'A kombinált jegy 3 napig érvényes, tehát a 9. és 11. nap szélére is átnyúlhat.'},
+
+{n:11,s:'shanghai',t:'Hengdian → Sanghaj',sub:'Az utolsó költözés',items:[
+ ['','Reggel még Hengdianban','Ami kimaradt tegnap',''],
+ ['','Vonat: Hengdian → Shanghai Hongqiao','kb. 2 óra, közvetlen','tr'],
+ ['','Bejelentkezés','Bund-oldal vagy Francia negyed',''],
+ ['','A Bund alkonyatkor','','hl'],
+ ['','Átkelés a nyilvános komppal','Pár jüan','']],
+ note:''},
+
+{n:12,s:'shanghai',t:'Sanghaj — a régi rétegek',sub:'Óváros és Francia negyed',items:[
+ ['','Yu-kert és az óváros','Korán, a csoportok előtt','hl'],
+ ['','Ebéd a környéken',''],
+ ['','Francia negyed gyalog','Wukang, Anfu, Fuxing park','hl'],
+ ['','Xintiandi vagy Zhangyuan este','']],
+ note:''},
+
+{n:13,s:'shanghai',t:'Sanghaj — a mai város',sub:'Kortárs nap',items:[
+ ['','West Bund múzeumnegyed','Long Museum, Power Station of Art','hl'],
+ ['','TX Huaihai vagy M50','Ifjúsági kultúra vagy galériák',''],
+ ['','Shanghai Tower naplementére','Online foglalt idősáv','hl'],
+ ['','Tetőbár a Bund túloldalán','']],
+ note:'Ha a hazaút korán indul, ezt vedd az igazi utolsó napnak.'},
+
+{n:14,s:'shanghai',t:'Sanghaj → Budapest',sub:'Haza',items:[
+ ['','Reggel: csomagolás','',''],
+ ['','Ha van idő: Jing\'an templom vagy Chedun','A repülő szerint',''],
+ ['','Kiutazás a Pudong repülőtérre','Maglev 8 perc, vagy metró 1 óra','tr'],
+ ['','Indulás Budapestre','Közvetlen','tr']],
+ note:''}];
+
+/* ============ teendők ============ */
+const PHASES=[
+{off:-190,t:'Repülőjegy és útlevél',hot:false,items:[
+ ['Útlevél érvényességének ellenőrzése','Fedje le az egész utat, ideálisan +6 hónap.',''],
+ ['Árfigyelő beállítása','Google Flights, multi-city: BUD→CKG és PVG→BUD.',''],
+ ['Nyitott szárú repülőjegy foglalása','A légitársaság saját oldalán — a módosítás így sokkal egyszerűbb.','180–290 000 Ft']]},
+{off:-170,t:'Szállások',hot:false,items:[
+ ['Wangxian sziklaszállás — ELSŐKÉNT','Az egész út legszűkebb keresztmetszete. Trip.com.','45–70 000 Ft'],
+ ['Wulingyuan, 2 éjszaka','A parkkapunál lévő városban.','≈ 40 000 Ft'],
+ ['Zhangjiajie város, 2 éjszaka','','≈ 36 000 Ft'],
+ ['Csungking 2 + Furong 1 éjszaka','','≈ 66 000 Ft'],
+ ['Hengdian 2 + Sanghaj 3 éjszaka','Hengdian városában, ne Yiwuban.','≈ 170 000 Ft'],
+ ['Mindenhol ingyenes lemondást válassz','Foglalj korán, februárban nézd át újra.','']]},
+{off:-160,t:'Vízum és papírok',hot:false,items:[
+ ['Vízummentesség meghosszabbításának figyelése','A jelenlegi szabály 2026. december 31-ig szól. Kína általában november elején jelenti be a hosszabbítást.',''],
+ ['Ha nincs hosszabbítás: L-típusú turistavízum','Kínai vízumközpont, Budapest. 4–6 hét kell rá.','25–35 000 Ft']]},
+{off:-100,t:'Biztosítás',hot:false,items:[
+ ['Utasbiztosítás kötése','Legyen benne hegyi és kötélpályás fedezet.','20–35 000 Ft']]},
+{off:-30,t:'Telefon és fizetés',hot:false,items:[
+ ['Alipay és WeChat Pay beállítása','Kártyával, itthon, és próbáld ki. Ne hagyd a reptérre.',''],
+ ['Roaming eSIM vásárlása','Ez kerüli meg a tűzfalat térképhez és üzenetekhez.','6–12 000 Ft'],
+ ['Offline térképek letöltése','Plusz egy működő fordítóapp.',''],
+ ['Útlevél lefotózása offline','']]},
+{off:-15,t:'VONATOK — kemény határidő',hot:true,items:[
+ ['Az összes vonatjegy megvásárlása','A kínai vasút pontosan 15 nappal előbb nyit, és a népszerű járatok elfogynak. Trip.com: angol, külföldi kártya, kis felár.','≈ 53 000 Ft'],
+ ['A 8. napra bő átszállási idők','Furong → Changsha → Shangrao három szakasz. Szoros átszállás = elmarad az esti kivilágítás.',''],
+ ['Első osztály a két 2,5 óránál hosszabb szakaszra','Opcionális.','+ ≈ 15 000 Ft']]},
+{off:-8,t:'Időpontos jegyek',hot:true,items:[
+ ['Tianmen-hegy, időpontos belépő','¥288','≈ 13 500 Ft'],
+ ['Hengdian kombinált jegy','3 nap / 5 park, ¥510','≈ 24 000 Ft'],
+ ['Wangxian-völgy belépő','¥120','≈ 5 600 Ft'],
+ ['Shanghai Tower, naplemente idősáv','¥180','≈ 8 500 Ft'],
+ ['Hanfu fotós Hengdianban','','15–35 000 Ft']]},
+{off:-2,t:'Indulás előtt',hot:false,items:[
+ ['QR-kódok, jegyek képernyőmentése',''],
+ ['Útlevél a kézipoggyászba','A vonatjegy maga az útlevél.',''],
+ ['Wulingyuan és Wangxian címe kínaiul','A sofőrnek megmutatni.','']]}];
+
+/* ============ segédek ============ */
+const HU_M=['január','február','március','április','május','június','július','augusztus','szeptember','október','november','december'];
+const HU_D=['vasárnap','hétfő','kedd','szerda','csütörtök','péntek','szombat'];
+const pad=n=>String(n).padStart(2,'0');
+const addD=(d,n)=>{const x=new Date(d.getTime());x.setDate(x.getDate()+n);return x;};
+const fmt=d=>`${d.getFullYear()}. ${HU_M[d.getMonth()]} ${d.getDate()}.`;
+const fmtShort=d=>`${HU_M[d.getMonth()].slice(0,3)}. ${d.getDate()}.`;
+const dow=d=>HU_D[d.getDay()];
+const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+
+function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
+
+/* képek: pontos fájlnév a STOPS adatból */
+function setImg(el,file,fb){
+  if(!file){if(fb)fb.style.display='flex';return;}
+  const p=new Image();
+  p.onload=()=>{el.style.backgroundImage=`url("images/${file}")`;if(fb)fb.style.display='none';};
+  p.onerror=()=>{if(fb)fb.style.display='flex';};
+  p.src='images/'+file;
+}
+
+/* ============ hero kép ============ */
+(function(){
+  const el=document.getElementById('heroBg');
+  const names=['hero.jpg','hero.jpeg','hero.png','hero.webp','03-Wulingyuan-tianzi.jpg'];
+  let k=0;
+  (function go(){
+    if(k>=names.length)return;
+    const p=new Image();const src='images/'+names[k++];
+    p.onload=()=>el.style.backgroundImage=`url("${src}")`;
+    p.onerror=go;p.src=src;
+  })();
+})();
+
+/* ============ útvonal SVG ============ */
+(function(){
+  const X=[70,210,380,530,670,880,1070,1250];
+  const L=['Csungking','Wulong','Wulingyuan','Tianmen','Furong','Wangxian','Hengdian','Sanghaj'];
+  const D=['1–3','3','3–5','5–7','7–8','8–9','9–11','11–14'];
+  const T=['1 ó 30','2 ó 00','helyi','0 ó 25','6 ó 30','2 ó 10','2 ó 00'];
+  let s=`<svg viewBox="0 0 1320 150" xmlns="http://www.w3.org/2000/svg">
+  <line x1="70" y1="58" x2="1250" y2="58" stroke="#1F2422" stroke-width="3"/>`;
+  for(let i=0;i<7;i++){
+    const mx=(X[i]+X[i+1])/2;
+    s+=`<text x="${mx}" y="48" text-anchor="middle" font-family="DM Mono,monospace" font-size="10.5" fill="#7C867F">${T[i]}</text>`;
+  }
+  X.forEach((x,i)=>{
+    const last=i===7,stop=i===1;
+    s+=`<circle cx="${x}" cy="58" r="${stop?5:8}" fill="${last?'#BF4A30':'#FBF9F5'}" stroke="${last?'#BF4A30':(stop?'#7C867F':'#1F2422')}" stroke-width="${stop?2:3}"/>`;
+    s+=`<text x="${x}" y="88" text-anchor="middle" font-family="Fraunces,serif" font-weight="700" font-size="${stop?13:16}" fill="${stop?'#4B554F':'#1F2422'}">${L[i]}</text>`;
+    s+=`<text x="${x}" y="108" text-anchor="middle" font-family="DM Mono,monospace" font-size="10" fill="#BF4A30">${D[i]}. nap</text>`;
+    s+=`<text x="${x}" y="128" text-anchor="middle" font-family="DM Mono,monospace" font-size="9.5" fill="#7C867F" id="rd${i}"></text>`;
+  });
+  document.getElementById('routebox').innerHTML=s+'</svg>';
+})();
+
+/* ============ kártyák ============ */
+(function(){
+  const c=document.getElementById('cards');
+  STOPS.forEach((st,i)=>{
+    const b=document.createElement('button');
+    b.className='dcard';b.type='button';
+    b.innerHTML=`<div class="shot">
+        <span class="num">${pad(i+1)}</span>
+        <div class="fallback">${G[st.s]}</div>
+        <div class="ph"></div>
+      </div>
+      <div class="body">
+        <h3>${st.n}</h3><span class="han">${st.han}</span>
+        <p class="lede">${st.lede}</p>
+        <div class="tags"><span class="tag red">${st.d}</span>${st.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <span class="more">Részletek <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </div>`;
+    b.onclick=()=>openStop(i);
+    c.appendChild(b);
+    setImg(b.querySelector('.ph'),st.hero,b.querySelector('.fallback'));
+  });
+})();
+
+/* ============ modal ============ */
+const modal=document.getElementById('modal');
+function openStop(i){
+  const st=STOPS[i];
+  const fb=document.getElementById('mFb');
+  fb.innerHTML=G[st.s];fb.style.display='flex';
+  const ph=document.getElementById('mPh');ph.style.backgroundImage='';
+  setImg(ph,st.hero,fb);
+  document.getElementById('mCont').innerHTML=`
+    <span class="eyebrow">${st.d}</span>
+    <h3>${st.n}</h3><span class="han">${st.han}</span>
+    <p class="lede">${st.lede}</p>
+    <div class="mblock"><h4>Mit nézzünk meg</h4><ul class="sights">${st.see.map(x=>`<li>
+        ${x[2]
+          ? `<span class="thumb" style="background-image:url('images/${x[2]}')"></span>`
+          : `<span class="thumb none">${G[st.s]}</span>`}
+        <span class="txt"><b>${x[0]}</b><span>${x[1]}</span></span>
+      </li>`).join('')}</ul></div>
+    <div class="mblock"><h4>Tippek</h4><ul>${st.tips.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+    <div class="fact"><b>Érdekesség</b>${st.fact}</div>`;
+  modal.classList.add('on');document.body.style.overflow='hidden';
+  modal.querySelector('.panel').scrollTop=0;
+}
+modal.addEventListener('click',e=>{if(e.target.hasAttribute('data-close')){modal.classList.remove('on');document.body.style.overflow='';}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('on')){modal.classList.remove('on');document.body.style.overflow='';}});
+
+/* ============ napok ============ */
+(function(){
+  const box=document.getElementById('days');
+  DAYS.forEach(d=>{
+    const st=STOPS.find(x=>x.s===d.s);
+    const det=document.createElement('details');det.className='day';
+    det.innerHTML=`<summary>
+        <span class="dnum">${d.n}<small>NAP</small></span>
+        <span class="dmeta"><b>${d.t}</b><span>${d.sub} · ${st?st.n:''}</span></span>
+        <span class="ddate" id="dd${d.n}">—</span>
+        <svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </summary>
+      <div class="plan">
+        ${d.items.map((it,j)=>`<div class="row">
+          <input class="t" type="text" inputmode="numeric" placeholder="--:--" maxlength="5" data-key="t.${d.n}.${j}">
+          <span class="what"><b>${it[1]}</b>${it[2]?`<span>${it[2]}</span>`:''}</span>
+          ${it[3]?`<span class="kind ${it[3]}">${it[3]==='tr'?'utazás':'fő program'}</span>`:''}
+        </div>`).join('')}
+        ${d.note?`<div class="note">${d.note}</div>`:''}
+      </div>`;
+    box.appendChild(det);
+  });
+  document.querySelectorAll('input.t').forEach(inp=>{
+    const k=inp.dataset.key;
+    const v=store(k);
+    if(v){inp.value=v;inp.classList.add('set');}
+    inp.addEventListener('input',()=>{
+      store(k,inp.value);
+      inp.classList.toggle('set',!!inp.value.trim());
+    });
+  });
+})();
+
+/* ============ teendők ============ */
+(function(){
+  const box=document.getElementById('phases');
+  PHASES.forEach((p,pi)=>{
+    const div=document.createElement('div');
+    div.className='phase'+(p.hot?' hot':'');
+    div.innerHTML=`<div class="ph-h"><h3>${p.t}</h3><span class="due" id="pd${pi}">—</span></div>
+      ${p.items.map((it,ii)=>`<div class="chk">
+        <input type="checkbox" id="c${pi}_${ii}" data-key="c.${pi}.${ii}">
+        <label for="c${pi}_${ii}">${it[0]}${it[1]?`<span>${it[1]}</span>`:''}${it[2]?`<span class="cost">${it[2]}</span>`:''}</label>
+      </div>`).join('')}`;
+    box.appendChild(div);
+  });
+  document.querySelectorAll('.chk input').forEach(cb=>{
+    const k=cb.dataset.key;
+    if(store(k)==='1'){cb.checked=true;cb.closest('.chk').classList.add('done');}
+    cb.addEventListener('change',()=>{
+      store(k,cb.checked?'1':'0');
+      cb.closest('.chk').classList.toggle('done',cb.checked);
+      prog();
+    });
+  });
+  prog();
+})();
+function prog(){
+  const all=document.querySelectorAll('.chk input');
+  const on=document.querySelectorAll('.chk input:checked').length;
+  document.getElementById('progBar').style.width=(all.length?on/all.length*100:0)+'%';
+}
+
+/* ============ dátumszámítás ============ */
+function recalc(){
+  const inp=document.getElementById('dep');
+  const parts=inp.value.split('-');
+  if(parts.length!==3)return;
+  const dep=new Date(+parts[0],+parts[1]-1,+parts[2]);
+  if(isNaN(dep))return;
+  const ret=addD(dep,13);
+
+  document.getElementById('hDep').textContent=fmtShort(dep);
+  document.getElementById('hRet').textContent=fmtShort(ret);
+  document.getElementById('outRange').textContent=`${fmt(dep)} – ${fmt(ret)}`;
+  document.getElementById('footDate').textContent=`${fmt(dep)} – ${fmt(ret)}`;
+
+  const today=new Date();today.setHours(0,0,0,0);
+  const left=Math.round((dep-today)/864e5);
+  document.getElementById('hCount').textContent=left>0?`${left} nap`:(left===0?'ma!':'—');
+
+  /* ünnepfigyelmeztetés */
+  const w=document.getElementById('outWarn');
+  const may=new Date(dep.getFullYear(),4,5), may1=new Date(dep.getFullYear(),4,1);
+  const oct1=new Date(dep.getFullYear(),9,1), oct7=new Date(dep.getFullYear(),9,7);
+  const clash=(dep<=may&&ret>=may1)||(dep<=oct7&&ret>=oct1);
+  w.innerHTML=clash
+    ? '<b style="color:#BF4A30">Figyelem: az út belelóg egy kínai ünnepbe (máj. 1–5. vagy okt. 1–7.) — tömeg és magas árak.</b>'
+    : `${dow(dep)}i indulás, ${dow(ret)}i hazaérkezés · 13 éjszaka`;
+
+  /* napok */
+  DAYS.forEach(d=>{
+    const dd=addD(dep,d.n-1);
+    const el=document.getElementById('dd'+d.n);
+    if(el)el.innerHTML=`${fmtShort(dd)}<em>${dow(dd)}</em>`;
+  });
+
+  /* útvonal dátumai */
+  const firstDay=[1,3,3,5,7,8,9,11];
+  firstDay.forEach((dn,i)=>{
+    const el=document.getElementById('rd'+i);
+    if(el)el.textContent=fmtShort(addD(dep,dn-1));
+  });
+
+  /* teendők határidői */
+  PHASES.forEach((p,pi)=>{
+    const dd=addD(dep,p.off);
+    const el=document.getElementById('pd'+pi);
+    const past=dd<today;
+    el.innerHTML=`${fmt(dd)} <em>· ${Math.abs(p.off)} nappal előtte</em>`;
+    el.style.color=p.hot?'#BF4A30':(past?'#7C867F':'#2F6B5B');
+  });
+}
+
+/* ============ indítás ============ */
+(function(){
+  const url=new URLSearchParams(location.search);
+  const fromUrl=url.get('indulas');
+  const saved=store('dep');
+  const inp=document.getElementById('dep');
+  if(fromUrl&&/^\d{4}-\d{2}-\d{2}$/.test(fromUrl))inp.value=fromUrl;
+  else if(saved&&/^\d{4}-\d{2}-\d{2}$/.test(saved))inp.value=saved;
+  inp.addEventListener('change',()=>{store('dep',inp.value);recalc();});
+  recalc();
+
+  document.getElementById('share').onclick=function(){
+    const u=location.origin+location.pathname+'?indulas='+inp.value;
+    const done=()=>{const t=this.textContent;this.textContent='Másolva!';setTimeout(()=>this.textContent=t,1800);};
+    if(navigator.clipboard)navigator.clipboard.writeText(u).then(done).catch(()=>prompt('Másold ki:',u));
+    else prompt('Másold ki:',u);
+  };
+})();
+</script>
+</body>
+</html>
