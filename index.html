@@ -778,23 +778,42 @@ const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
 
 function store(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
 
-/* képek: pontos fájlnév a STOPS adatból */
+/* képek: előbb images/ mappából, ha ott nincs, a gyökérből */
+function imgPaths(file){return ['images/'+file, file];}
 function setImg(el,file,fb){
   if(!file){if(fb)fb.style.display='flex';return;}
-  const p=new Image();
-  p.onload=()=>{el.style.backgroundImage=`url("images/${file}")`;if(fb)fb.style.display='none';};
-  p.onerror=()=>{if(fb)fb.style.display='flex';};
-  p.src='images/'+file;
+  const list=imgPaths(file);let k=0;
+  (function go(){
+    if(k>=list.length){if(fb)fb.style.display='flex';return;}
+    const src=list[k++];
+    const p=new Image();
+    p.onload=()=>{el.style.backgroundImage=`url("${src}")`;if(fb)fb.style.display='none';};
+    p.onerror=go;
+    p.src=src;
+  })();
+}
+/* bélyegképekhez: megkeresi a működő útvonalat, és beállítja */
+function setThumb(el,file){
+  const list=imgPaths(file);let k=0;
+  (function go(){
+    if(k>=list.length){el.classList.add('none');return;}
+    const src=list[k++];
+    const p=new Image();
+    p.onload=()=>{el.style.backgroundImage=`url("${src}")`;};
+    p.onerror=go;
+    p.src=src;
+  })();
 }
 
 /* ============ hero kép ============ */
 (function(){
   const el=document.getElementById('heroBg');
   const names=['hero.jpg','hero.jpeg','hero.png','hero.webp','03-Wulingyuan-tianzi.jpg'];
+  const list=[];names.forEach(n=>{list.push('images/'+n);list.push(n);});
   let k=0;
   (function go(){
-    if(k>=names.length)return;
-    const p=new Image();const src='images/'+names[k++];
+    if(k>=list.length)return;
+    const p=new Image();const src=list[k++];
     p.onload=()=>el.style.backgroundImage=`url("${src}")`;
     p.onerror=go;p.src=src;
   })();
@@ -857,14 +876,15 @@ function openStop(i){
     <span class="eyebrow">${st.d}</span>
     <h3>${st.n}</h3><span class="han">${st.han}</span>
     <p class="lede">${st.lede}</p>
-    <div class="mblock"><h4>Mit nézzünk meg</h4><ul class="sights">${st.see.map(x=>`<li>
+    <div class="mblock"><h4>Mit nézzünk meg</h4><ul class="sights">${st.see.map((x,j)=>`<li>
         ${x[2]
-          ? `<span class="thumb" style="background-image:url('images/${x[2]}')"></span>`
+          ? `<span class="thumb" data-file="${x[2]}"></span>`
           : `<span class="thumb none">${G[st.s]}</span>`}
         <span class="txt"><b>${x[0]}</b><span>${x[1]}</span></span>
       </li>`).join('')}</ul></div>
     <div class="mblock"><h4>Tippek</h4><ul>${st.tips.map(x=>`<li>${x}</li>`).join('')}</ul></div>
     <div class="fact"><b>Érdekesség</b>${st.fact}</div>`;
+  document.querySelectorAll('#mCont .thumb[data-file]').forEach(t=>setThumb(t,t.dataset.file));
   modal.classList.add('on');document.body.style.overflow='hidden';
   modal.querySelector('.panel').scrollTop=0;
 }
